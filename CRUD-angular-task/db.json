@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "id": "4eff",
+      "name": "Hossam Mohsen",
+      "email": "hossam5mohsen.42@gmail.com",
+      "password": "111111"
+    },
+    {
+      "id": "8fc5",
+      "name": "Ahmed Mahmoud",
+      "email": "ahmed@gmail.com",
+      "password": "111111"
+    },
+    {
+      "id": "9cbd",
+      "name": "Mohsen",
+      "email": "mohsen@gmail.com",
+      "password": "111111"
+    },
+    {
+      "id": "c141",
+      "name": "Mohamed",
+      "email": "mohamed@gmail.com",
+      "password": "111111"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "2",
+      "userId": "8fc5",
+      "title": "Task 2",
+      "description": "Description for Task 2"
+    },
+    {
+      "id": "dde8",
+      "title": "ahmed first task ",
+      "description": "this is for ahmed",
+      "userId": "8fc5"
+    },
+    {
+      "id": "6a42",
+      "title": "Hossam",
+      "description": "",
+      "userId": "4eff"
+    },
+    {
+      "id": "91c1",
+      "title": "Hoosam mohsen",
+      "description": "hhh",
+      "userId": "4eff"
+    },
+    {
+      "id": "039e",
+      "title": "Here",
+      "description": "Test",
+      "userId": "4eff"
+    }
+  ]
+}

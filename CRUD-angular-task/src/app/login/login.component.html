@@ -1,0 +1,74 @@
+@if(isLoading){
+  <app-spinner />
+}
+@if(error){
+  <div class="error-message">
+    {{errorMsg}}
+ </div>
+}
+
+<div class="register-container">
+    <div class="register-form">
+      <h2>Login Account Form</h2>
+      <hr />
+      <form [formGroup]="myForm" (ngSubmit)="onLogin()">
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+           formControlName="email"
+            required
+          />
+          <div>
+            @if(emailInputValidation){
+             <small >
+               @if(emailrequiredValiation){
+                 Email is required.
+               }
+             </small>
+             <small >
+               @if(emailformatValidation){
+                Email must be a valid email address
+               }
+               
+             </small>
+            }
+         </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Your Password"
+            formControlName="password"
+            required
+          />
+          <div>
+            @if(passwordInputValidation){
+             <small >
+               @if(passwordrequiredValiation){
+                 password is required.
+               }
+             </small>
+             <small >
+               @if(passwordLengthValidation){
+                 password must be at least 6 characters long.
+               }
+             </small>
+            }
+         </div>
+
+        </div>
+
+        <button type="submit" >Login</button>
+        <a (click)="onNvigateToReg()">I Don't have account </a>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,54 @@
+<div class="sidebar">
+  <div class="logo">
+    <i class="fas fa-code"></i>
+    <span>CRUD System</span>
+  </div>
+  <ul class="menu">
+    <li><i class="fas fa-th-large"></i> <span>Dashboard</span></li>
+    <li><i class="fas fa-user"></i> <span>User</span></li>
+    <li><i class="fas fa-envelope"></i> <span>Messages</span></li>
+    <li><i class="fas fa-cog"></i> <span>Settings</span></li>
+  </ul>
+  <div class="profile">
+    <span
+      ><button class="logout" (click)="logout()">
+        <i class="fa fa-sign-out"></i> Logout
+      </button></span
+    >
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <div class="top-bar">
+    <div class="user-info">
+      <h2>Welcome, {{ userName }}</h2>
+      <p>Dashboard Overview</p>
+    </div>
+  </div>
+  <!-- Cards Section -->
+  <div class="cards">
+    @for (card of cardDataArr; track card.title; let i = $index) {
+    <div class="card">
+      <h3>{{ card.title }}</h3>
+      <p>{{ card.description }}</p>
+      <div class="buttons">
+        <button class="btn btn-edit" (click)="onAddOrEdit(card , i)">Edit</button>
+        <button class="btn btn-delete" (click)="onDelete(i)">Delete</button>
+      </div>
+    </div>
+    }
+    <!-- Add Card Button -->
+    <div (click)="onAddOrEdit()" class="card add-card">
+      <i class="fas fa-plus"></i>
+    </div>
+  </div>
+  @if(isFormShown){
+  <app-card-form
+    (close)="closeForm()"
+    (formDataEmitted)="recivedData($event)"
+    [isEditMode]="isEditMode"
+    [cardData]="selectedCard"
+  ></app-card-form>
+  }
+</div>

@@ -1,0 +1,11 @@
+<div class="popup-overlay" >
+    <div class="popup">
+        <h3>{{isEditMode? 'Update Card' : 'Add New Card'}}</h3>
+        <span class="close-btn" id="closePopup" (click)="closeForm()">&times;</span>
+        <form [formGroup]="popupForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="title" placeholder="Enter Title">
+            <input type="text" formControlName="description" placeholder="Enter Description">
+            <button type="submit" class="btn-add" >{{isEditMode? 'Update' : 'Add'}}</button>
+        </form>
+    </div>
+</div>
